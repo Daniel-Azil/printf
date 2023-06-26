@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	int size = 0;
 	int var = 0;
 	int = al_var = 0;
-	va_list catalog;
+	va_list catalog_ls;
 	char* (*pnt)(va_list);
 	char *buff_cache; 
 	char *input;
@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 	if (buff_cache == NULL)
 		return (-1);
 
-	va_start(catalog, format);
+	va_start(catalog_ls, format);
 
 	while (format[var] != '\0')
 	{
@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 			var++;
 			if (format[var] == '\0')
 			{
-				va_end(catalog);
+				va_end(catalog_ls);
 				free(buff_cache);
 				return (-1);
 			}
@@ -60,10 +60,10 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
-					input = pnt(catalog);
+					input = pnt(catalog_ls);
 					if (input == NULL)
 					{
-						va_end(catalog);
+						va_end(catalog_ls);
 						free(buff_cache);
 						return (-1);
 					}
@@ -85,6 +85,6 @@ int _printf(const char *format, ...)
 			} var++;
 		}
 	}
-	process_output_buffer(buff_cache, size, catalog);
+	process_output_buffer(buff_cache, size, catalog_ls);
 	return (_size_total);
 }
