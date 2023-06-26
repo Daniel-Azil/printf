@@ -3,7 +3,6 @@
 /**
  * _printf - Lumka and Azil custom printf function.
  * @format: Character string containing all the format specifiers.
- *
  * Return: Character sequence with expanded format specifiers.
  */
 int _printf(const char *format, ...)
