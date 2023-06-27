@@ -19,7 +19,7 @@ char *str_reverse_func(va_list catalog_ls)
 	if (pointer_1 == NULL)
 		pointer_1 = ")llun(";
 
-	total_size = _strlen(pointer_1);
+	total_size = get_string_length(pointer_1);
 
 	pointer_2 = malloc(sizeof(char) * (total_size + 1));
 	if (pointer_2 == NULL)
