@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	int al_var = 0;
 	va_list catalog_ls;
 	char* (*pnt)(va_list);
-	char *_buff_cache; 
+	char *_buff_cache;
 	char *input;
 
 	if (format == NULL)
@@ -54,8 +54,10 @@ int _printf(const char *format, ...)
 				if (pnt == NULL)
 				{
 					size = handles_buffer(_buff_cache, size);
-					_buff_cache[size++] = '%'; _size_total++;
-					_buff_cache[size++] = format[var]; _size_total++;
+					_buff_cache[size++] = '%';
+					_size_total++;
+					_buff_cache[size++] = format[var];
+					_size_total++;
 				}
 				else
 				{
@@ -77,7 +79,8 @@ int _printf(const char *format, ...)
 					{
 						size = handles_buffer(_buff_cache, size);
 						_buff_cache[size++] = input[al_var];
-						_size_total++; al_var++;
+						_size_total++;
+						al_var++;
 					}
 					free(input);
 				}

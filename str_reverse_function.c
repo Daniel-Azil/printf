@@ -13,7 +13,7 @@ char *str_reverse_func(va_list catalog_ls)
 	int int_var;
 	int total_size;
 	int variable = 0;
-        char *pointer_2;
+	char *pointer_2;
 
 	pointer_1 = va_arg(catalog_ls, char *);
 	if (pointer_1 == NULL)
@@ -25,7 +25,7 @@ char *str_reverse_func(va_list catalog_ls)
 	if (pointer_2 == NULL)
 		return (NULL);
 
-	for(int_var = (total_size - 1); int_var >= 0; int_var--)
+	for (int_var = (total_size - 1); int_var >= 0; int_var--)
 	{
 		pointer_2[variable++] = pointer_1[int_var];
 	}

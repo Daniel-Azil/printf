@@ -4,11 +4,12 @@
 #include <stdarg.h>
 
 /**
- * struct display – Typedef struct,
- * @ identifier: Character type to be used.
- * @ print_function: Displays the inputted character.
+ * struct display - Typedef struct.
+ * @identifier: Character type to be used.
+ * @print_function: Displays the inputted character.
  */
-typedef struct display {
+typedef struct display
+{
 	char identifier;
 	char*(*print_function)(va_list);
 } display_t;

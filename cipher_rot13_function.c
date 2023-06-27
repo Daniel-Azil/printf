@@ -19,11 +19,13 @@ char *cipher_rot13_func(va_list catalog_ls)
 
 	while (pointer[variable] != '\0')
 	{
-		if ((pointer[variable] >= 'a' && pointer[variable] <= 'm') || (pointer[variable] >= 'A' && pointer[variable] <= 'M'))
+		if ((pointer[variable] >= 'a' && pointer[variable] <= 'm') ||
+			(pointer[variable] >= 'A' && pointer[variable] <= 'M'))
 		{
 			pnt[variable] = pointer[variable] + 13;
 		}
-		else if ((pointer[variable] >= 'n' && pointer[variable] <= 'z') || (pointer[variable] >= 'N' && pointer[variable] <= 'Z'))
+		else if ((pointer[variable] >= 'n' && pointer[variable] <= 'z') ||
+			(pointer[variable] >= 'N' && pointer[variable] <= 'Z'))
 		{
 			pnt[variable] = pointer[variable] - 13;
 		}
