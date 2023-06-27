@@ -9,7 +9,8 @@
 
 int _printf(const char *format, ...);
 int handles_buffer(char *_buff_cache, int size);
-
+char *int_string(int al, int size, int var);
+ar *d_custom_specifier(va_list catalog_ls);
 char *c_custom_specifier(va_list catalog_ls);
 
 #endif
