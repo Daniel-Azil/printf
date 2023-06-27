@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	int _size_total = 0;
 	int size = 0;
 	int var = 0;
-	int = al_var = 0;
+	int al_var = 0;
 	va_list catalog_ls;
 	char* (*pnt)(va_list);
 	char *_buff_cache; 
