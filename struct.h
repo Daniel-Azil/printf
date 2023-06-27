@@ -1,5 +1,5 @@
-#ifdef STRUCT_H
 #ifndef STRUCT_H
+#define STRUCT_H
 
 /**
  * struct display – Typedef struct,
