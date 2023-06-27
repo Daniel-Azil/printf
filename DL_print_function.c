@@ -13,14 +13,14 @@ int _printf(const char *format, ...)
 	int = al_var = 0;
 	va_list catalog_ls;
 	char* (*pnt)(va_list);
-	char *buff_cache; 
+	char *_buff_cache; 
 	char *input;
 
 	if (format == NULL)
 		return (-1);
 
-	buff_cache = create_buffer();
-	if (buff_cache == NULL)
+	_buff_cache = allocate_output_buffer();
+	if (_buff_cache == NULL)
 		return (-1);
 
 	va_start(catalog_ls, format);
@@ -29,8 +29,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[var] != '%')
 		{
-			size = handles_buffer(buff_cache, size);
-			buff_cache[size++] = format[var++];
+			size = handles_buffer(_buff_cache, size);
+			_buff_cache[size++] = format[var++];
 			_size_total++;
 		}
 		else
@@ -39,23 +39,23 @@ int _printf(const char *format, ...)
 			if (format[var] == '\0')
 			{
 				va_end(catalog_ls);
-				free(buff_cache);
+				free(_buff_cache);
 				return (-1);
 			}
 			if (format[var] == '%')
 			{
-				size = handles_buffer(buff_cache, size);
-				buff_cache[size++] = format[var];
+				size = handles_buffer(_buff_cache, size);
+				_buff_cache[size++] = format[var];
 				_size_total++;
 			}
 			else
 			{
-				pnt = get_func(format[var]);
+				pnt = find_conversion_function(format[var]);
 				if (pnt == NULL)
 				{
-					size = handles_buffer(buff_cache, size);
-					buff_cache[size++] = '%'; _size_total++;
-					buff_cache[size++] = format[var]; _size_total++;
+					size = handles_buffer(_buff_cache, size);
+					_buff_cache[size++] = '%'; _size_total++;
+					_buff_cache[size++] = format[var]; _size_total++;
 				}
 				else
 				{
@@ -63,20 +63,20 @@ int _printf(const char *format, ...)
 					if (input == NULL)
 					{
 						va_end(catalog_ls);
-						free(buff_cache);
+						free(_buff_cache);
 						return (-1);
 					}
 					if (format[var] == 'c' && input[0] == '\0')
 					{
-						size = handles_buffer(buff_cache, size);
-						buff_cache[size++] = '\0';
+						size = handles_buffer(_buff_cache, size);
+						_buff_cache[size++] = '\0';
 						_size_total++;
 					}
 					al_var = 0;
 					while (input[al_var] != '\0')
 					{
-						size = handles_buffer(buff_cache, size);
-						buff_cache[size++] = input[al_var];
+						size = handles_buffer(_buff_cache, size);
+						_buff_cache[size++] = input[al_var];
 						_size_total++; al_var++;
 					}
 					free(input);
@@ -84,6 +84,6 @@ int _printf(const char *format, ...)
 			} var++;
 		}
 	}
-	process_output_buffer(buff_cache, size, catalog_ls);
+	process_output_buffer(_buff_cache, size, catalog_ls);
 	return (_size_total);
 }

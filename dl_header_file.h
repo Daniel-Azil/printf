@@ -8,6 +8,8 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-int handles_buffer(char *buff_cache, int size);
+int handles_buffer(char *_buff_cache, int size);
 
-endif
+char *c_custom_specifier(va_list catalog_ls);
+
+#endif
