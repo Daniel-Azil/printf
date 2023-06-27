@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#include "struct.h"
+
 int _printf(const char *format, ...);
 int handles_buffer(char *_buff_cache, int size);
 char *int_string(int al, int size, int var);
