@@ -1,4 +1,4 @@
-#include "dl_header_file.c"
+#include "dl_header_file.h"
 
 /**
  * main - Entry point
