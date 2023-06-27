@@ -1,5 +1,5 @@
 #ifndef DL_HEADER_FILE_H
-#ifdef DL_HEADER_FILE_H
+#define DL_HEADER_FILE_H
 
 #include <limits.h>
 #include <stdio.h>
