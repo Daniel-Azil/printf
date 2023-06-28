@@ -18,7 +18,7 @@ char *c_custom_specifier(va_list catalog_ls);
 char *str_reverse_func(va_list catalog_ls);
 char *copy_string(char *dga_var, char *_source);
 char *cipher_rot13_func(va_list catalog_ls);
-nt get_string_length(char *_string);
+int get_string_length(char *_string);
 char *convert_to_base8(va_list catalog_ls);
 char *s_custom_specifier(va_list catalog_ls);
 
