@@ -10,7 +10,7 @@
  */
 int handles_buffer(char *_buff_cache, int size)
 {
-	if (size > 1500)
+	if (size > 1020)
 	{
 		write(1, _buff_cache, size);
 		size = 0;
