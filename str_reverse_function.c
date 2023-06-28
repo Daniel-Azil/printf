@@ -1,4 +1,4 @@
-#include "dl_header_file.h"
+#include "main.h"
 
 /**
  * str_reverse_func - Returns a string in reverse order.
