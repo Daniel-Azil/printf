@@ -1,4 +1,4 @@
-#include "dl_header_file.h"
+#include "main.h"
 /**
  * get_string_length - returns integer of size of strings.
  * @_string: initialised variable named _string.
